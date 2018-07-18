@@ -1,3 +1,35 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//Colors
+
+$aquamarine: #76BEE2;
+$iron: #D8DCDF;
+$firefly: #0D232D;
+$red: #B52A34;
+$black: #000000;
+$white: #ffffff;
+
+#products {
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+.product {
+  border: 1px solid $iron;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  img {
+    border: 1px solid $firefly;
+    border-radius: 5px;
+    margin:auto;
+    display: flex; 
+  }
+  h3, p {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+}
