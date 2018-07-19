@@ -6,7 +6,7 @@
   </ol>
   <div class="carousel-inner">
     
-    <!-- Products is limited to the first three items (in product controller) -->
+    <!-- Products is limited to the first three items (in simple_pages_controller) -->
     <% @products.each do |product| %>
       <div class="carousel-item<%= " active" if product == @products.first %>">    
         <%= image_tag(product.image_url) %>
