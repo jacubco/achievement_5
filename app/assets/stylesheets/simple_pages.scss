@@ -33,7 +33,7 @@ h1 {
   background-color: $aquamarine !important;
 }
 
-.navbar-brand {
+.navbar {
   i {
     font-size: 3vh !important;
     text-decoration: underline;
@@ -42,7 +42,6 @@ h1 {
 
 // landing_page
 .carousel-caption {
-  padding-bottom: 20vh;
   color: $black;
   font-size: 2.5em;
   text-transform: capitalize;

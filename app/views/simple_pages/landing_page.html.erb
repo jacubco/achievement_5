@@ -1,3 +1,4 @@
+<section id="slides">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <% @products.each do |product| %>
@@ -9,7 +10,7 @@
     <!-- Products is limited to the first three items (in simple_pages_controller) -->
     <% @products.each do |product| %>
       <div class="carousel-item<%= " active" if product == @products.first %>">    
-        <%= image_tag(product.image_url) %>
+        <%= image_tag(product.image_url, class: "img-fluid") %>
 
         <!-- Carousel captions -->
         <div class="carousel-caption d-none d-md-block">
@@ -18,6 +19,7 @@
       </div>
     <% end %>
   </div>
+</div></section>
 
   <!-- Carousel controls -->
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

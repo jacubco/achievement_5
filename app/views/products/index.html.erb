@@ -8,7 +8,7 @@
     </div>
     
      <!-- Render with passing local variables -->
-    <h3>Render passing local variables</h3>
+    <h4>Render passing local variables</h4>
     <div  class="row">
       <% @products.each do |product| %>
       <%= render partial: "product", locals: {product: product} %>
@@ -16,7 +16,7 @@
     </div>
 
     <!-- Render using shorthand: rails sets local variable when partial whith same name as model created -->
-    <h3>Render using local variable shorhand</h3>
+    <h4>Render using local variable shorhand</h4>
     <div  class="row">
       <% @products.each do |product| %>
       <%= render product%>
@@ -24,12 +24,12 @@
     </div>
     
     <!-- Render using collection option: A collection is an array with of objects of the same model  -->
-    <h3>Display using collection option</h3>
+    <h4>Display using collection option</h4>
     <div class="row">
       <%= render partial: "product", collection: @products %>
     </div>
 
-    <h3>Ultimate shorthand</h3>
+    <h4>Ultimate shorthand</h4>
     <div class="row">
       <%= render @products %>
     </div>
