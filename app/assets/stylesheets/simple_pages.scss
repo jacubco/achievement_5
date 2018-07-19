@@ -40,6 +40,14 @@ h1 {
   }
 }
 
+// landing_page
+.carousel-caption {
+  padding-bottom: 20vh;
+  color: $black;
+  font-size: 2.5em;
+  text-transform: capitalize;
+}
+
 // Hero image
 #hero {
   background-image: url("/assets/bike.jpg");
