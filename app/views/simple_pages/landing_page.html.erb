@@ -1,2 +1,53 @@
-<h2>Featured Product:</h2>
-<%= @featured_product.name %>
+<section id="hero">
+	<div id="welcome-message">
+		<h1>Welcome to Bike Berlin</h1>
+		<h2>Your source for used bikes in Berlin</h2>
+	</div>
+</section><!-- end hero -->
+
+<section id="three-column-grid" class="content">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4 text-center">
+        <i class="column-icon fas fa-glasses"></i>
+        <h3>hipster horses</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum corporis assumenda libero repellendus, necessitatibus praesentium nulla! Quis quod maxime minus neque dolore ab nulla, numquam. Adipisci esse dolores soluta perferendis.
+        </p>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="column-icon fas fa-bolt"></i>
+        <h3>e-bikes</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum corporis assumenda libero repellendus, necessitatibus praesentium nulla! Quis quod maxime minus neque dolore ab nulla, numquam. Adipisci esse dolores soluta perferendis.
+        </p>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="column-icon fas fa-smile"></i>
+        <h3>awesome deals</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum corporis assumenda libero repellendus, necessitatibus praesentium nulla! Quis quod maxime minus neque dolore ab nulla, numquam. Adipisci esse dolores soluta perferendis.
+        </p>
+      </div>
+
+    </div><!-- end three column grid -->
+</section>
+<section id="arrivals" class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Featured Product</h3>
+      </div>
+      <div class="product-col col-sm-12 col-md-4 col-lg-3">
+          <div class="product">
+            <a href="#"><h3><%= @featured_product.name %></h3></a>
+            <%= image_tag(@featured_product.image_url, class: "img-fluid") %>
+            <p><%= @featured_product.description %></p>
+            <p><strong>Colour: </strong><%= @featured_product.colour %></p>
+            <strong>$<%= @featured_product.price %></strong>
+          </div>
+        </div><!-- /col -->
+    </div>
+  </div>
+</section>
