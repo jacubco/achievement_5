@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     # render a layout different from application.html.erb
-    render layout: "products"
+    # render layout: "products"
   end
 
   # GET /products/1

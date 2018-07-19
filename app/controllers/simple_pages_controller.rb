@@ -6,4 +6,3 @@ class SimplePagesController < ApplicationController
   	@featured_product = Product.first
   end
 end
-
