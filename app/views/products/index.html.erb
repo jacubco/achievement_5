@@ -9,16 +9,10 @@
 
     <div  class="row">
       <% @products.each do |product| %>
-        <div class="product-col col-sm-12 col-md-4 col-lg-3">
-          <div class="product">
-            <a href="#"><h3><%= product.name %></h3></a>
-            <%= image_tag(product.image_url, class: "img-fluid") %>
-            <p><%= product.description %></p>
-            <p><strong>Colour: </strong><%= product.colour %></p>
-            <strong>$<%= product.price %></strong>
-          </div>
-        </div><!-- /col -->
+      <!-- Render with passing local variables -->
+      <%= render partial: "product", locals: {product: product} %>
       <% end %>
+
     </div>
   </div>
 </section>
