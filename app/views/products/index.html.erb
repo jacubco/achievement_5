@@ -7,8 +7,20 @@
       </div>
     </div>
     
-    <div class="row">
-      <%= render @products %>
+     <!-- Render with passing local variables -->
+    <h4>Render passing local variables</h4>
+    <div  class="row">
+      <% @products.each do |product| %>
+        <div class="product-col col-sm-12 col-md-4 col-lg-3">
+    <div class="product">
+      <a href="#"><h3><%= product.name %></h3></a>
+      <%= image_tag(product.image_url, class: "img-fluid") %>
+      <p><%= product.description %></p>
+      <p><strong>Colour: </strong><%= product.colour %></p>
+      <strong>$<%= product.price %></strong>
+    </div>
+  </div><!-- /col -->
+      <% end %>
     </div>
 
   </div>
