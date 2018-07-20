@@ -1,16 +1,29 @@
 <section id="slides">
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">" data-ride="carousel">
+  
+  <!-- Carousel indicators -->
   <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <% @products.each do |product| %>
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="<%= "active" if product == @products.first %>"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
     <% end %>
   </ol>
+
+  <!-- Carousel items -->
   <div class="carousel-inner">
-    
-    <!-- Products is limited to the first three items (in simple_pages_controller) -->
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/assets/bike.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Welcome to Bike Berlin</h1>
+        <h2>Your source for used bikes in Berlin</h2>
+      </div>
+    </div>
+  
+    <!-- Products is limited to the first two items in the database (done in simple_pages_controller) -->
     <% @products.each do |product| %>
-      <div class="carousel-item<%= " active" if product == @products.first %>">    
-        <%= image_tag(product.image_url, class: "img-fluid") %>
+      <div class="carousel-item">    
+        <%= image_tag(product.image_url, class: "d-block w-100") %>
 
         <!-- Carousel captions -->
         <div class="carousel-caption d-none d-md-block">
