@@ -1,40 +1,50 @@
 <section id="slides">
+    
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner">" data-ride="carousel">
+    <div class="carousel-inner" data-ride="carousel">
     
-    <!-- Carousel indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <% @products.each do |product| %>
-      <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
-      <% end %>
-    </ol>
+      <!-- Carousel indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <% @products.each do |product| %>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+        <% end %>
+      </ol>
 
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="/assets/blue_bike_cropped.jpg" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h1>Welcome to Bike Berlin</h1>
-          <h2>Your source for used bikes in Berlin</h2>
-        </div>
-      </div>
-    
-      <!-- Products is limited to the first two items in the database (done in simple_pages_controller) -->
-      <% @products.each do |product| %>
-        <div class="carousel-item">    
-          <%= image_tag(product.image_url, class: "d-block w-100") %>
-
-          <!-- Carousel captions -->
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        
+        <!-- Static item -->
+        <div class="carousel-item active">
+          <div class="overlay"></div>
+          <img class="d-block w-100" src="/assets/blue_bike_cropped.jpg" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
-            <%= product.name %>
+            <h1>Welcome to Bike Berlin</h1>
+            <h2>Your source for used bikes in Berlin</h2>
           </div>
         </div>
-      <% end %>
+        
+        <!-- Dynamic items -->
+        <!-- Products is limited to the first two items in the database (done in simple_pages_controller) -->
+        <% @products.each do |product| %>
+          <div class="carousel-item">   
+          <div class="overlay"></div>
+   
+            <%= image_tag(product.image_url, class: "d-block w-100") %>
+
+            <!-- Carousel captions -->
+            <div class="carousel-caption d-none d-md-block">
+              <h1><%= product.name %></h1>
+              <p>$<%= product.price %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div><!-- end carousel -->
+  </div>
 </section>
+
 
   <!-- Carousel controls -->
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -46,6 +56,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div></div></div></section>
 
 
 <!-- Three column grid -->
@@ -83,17 +94,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3>Featured Product</h3>
+        <h3>Featured Products</h3>
       </div>
-      <div class="product-col col-sm-12 col-md-4 col-lg-3">
-          <div class="product">
-            <a href="#"><h3><%= @featured_product.name %></h3></a>
-            <%= image_tag(@featured_product.image_url, class: "img-fluid") %>
-            <p><%= @featured_product.description %></p>
-            <p><strong>Colour: </strong><%= @featured_product.colour %></p>
-            <strong>$<%= @featured_product.price %></strong>
-          </div>
-        </div><!-- /col -->
+      <% @featured_products.each do |product| %>
+      <%= render product%>
+      <% end %>
     </div>
   </div>
 </section>
