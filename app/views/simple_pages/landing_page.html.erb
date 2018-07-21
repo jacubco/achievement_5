@@ -1,9 +1,8 @@
 <section id="slides">
     
   <!-- Carousel -->
-  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner" data-ride="carousel">
-    
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
       <!-- Carousel indicators -->
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -21,16 +20,16 @@
           <img class="d-block w-100" src="/assets/blue_bike_cropped.jpg" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
             <h1>Welcome to Bike Berlin</h1>
-            <h2>Your source for used bikes in Berlin</h2>
+            <p>Your source for used bikes in Berlin</p>
           </div>
         </div>
         
         <!-- Dynamic items -->
-        <!-- Products is limited to the first two items in the database (done in simple_pages_controller) -->
+        <!-- @products is limited to the first two items in the database (done in simple_pages_controller) -->
         <% @products.each do |product| %>
+          
           <div class="carousel-item">   
-          <div class="overlay"></div>
-   
+            <div class="overlay"></div>
             <%= image_tag(product.image_url, class: "d-block w-100") %>
 
             <!-- Carousel captions -->
@@ -39,24 +38,20 @@
               <p>$<%= product.price %></p>
             </div>
           </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
+          
+        <% end %> 
 
+        </div>
 
-  <!-- Carousel controls -->
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-</div></div></div></section>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div><!-- end carousel
 
 
 <!-- Three column grid -->
