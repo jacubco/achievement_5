@@ -5,4 +5,8 @@ class SimplePagesController < ApplicationController
   	@products = Product.limit(2)
   	@featured_products = Product.find(1,2,5)
   end
+
+  def about
+  	redirect_to '/simple_pages/contact'
+  end
 end
