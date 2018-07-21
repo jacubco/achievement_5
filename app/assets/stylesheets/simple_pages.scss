@@ -24,7 +24,7 @@ h1 {
 }
 
 .content {
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 40px;
 }
 
@@ -40,6 +40,13 @@ h1 {
     font-size: 3vh !important;
     text-decoration: underline;
   }
+
+  a {
+    color: $black !important;
+  }
+  a:hover {
+    color: $white !important;
+  }
 }
 
 // landing_page
@@ -48,10 +55,6 @@ h1 {
 .carousel-caption {
   font-size: 2.5vh;
   text-transform: capitalize;
-}
-
-.carousel-control-prev {
-  height: auto !important;
 }
 
 .overlay {
