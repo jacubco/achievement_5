@@ -5,6 +5,7 @@
 
 //Colors
 $aquamarine: #76BEE2;
+$iron: #D8DCDF;
 $firefly: #0D232D;
 $red: #B52A34;
 $black: #000000;
@@ -49,6 +50,32 @@ h1 {
   }
 }
 
+// Footer
+footer {
+  color: $white;
+  background: $firefly;
+
+  p {
+    padding: 20px;
+  }
+}
+
+// Sticky footer styles
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  height: 100px; 
+}
+
 // landing_page
 
 // Carousel
@@ -66,6 +93,7 @@ h1 {
     transition: all 0.2s ease-out;
 }
 
+// Index.html.erb
 // Hero image
 #hero {
   background-image: url("/assets/bike.jpg");
@@ -120,28 +148,9 @@ h1 {
 
 }
 
-// Footer
-footer {
-  color: $white;
-  background: $firefly;
-
-  p {
-    padding: 20px;
+// Contact
+#contact {
+  h4 {
+    color: $aquamarine;
   }
-}
-
-// Sticky footer styles
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -100px; 
-}
-
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-
-.site-footer, .page-wrap:after {
-  height: 100px; 
 }

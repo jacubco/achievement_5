@@ -1,14 +1,39 @@
-<section id="products" class="content">
+<section id="contact" class="content">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-      	<h1>Contact</h1>
-  			<h3>Where to find us:</h3>
-  			<p>
-    			Köpenicker Straße 126<br>
-    			10179 Berlin
-  			</p>
-		  </div>
-	 </div>
+        <h1>Contact Us</h1>
+        <h4>Where to find us:</h4>
+        <p>
+          Köpenicker Straße 126<br>
+          10179 Berlin
+        </p>
+     
+        <h4>Send us a message:</h4>
+        <%= flash[:notice] %>
+
+        <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+        
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :message %>
+          <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+        </div>
+
+        <div>
+          <%= form.submit "Send", class: "form_label btn btn-outline-success my-2 my-sm-0" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </section>
