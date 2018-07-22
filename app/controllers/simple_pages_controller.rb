@@ -7,6 +7,6 @@ class SimplePagesController < ApplicationController
   end
 
   def about
-  	redirect_to '/simple_pages/contact'
+  	# redirect_to '/simple_pages/contact'
   end
 end
