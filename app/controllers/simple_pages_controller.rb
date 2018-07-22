@@ -3,7 +3,7 @@ class SimplePagesController < ApplicationController
   end
   def landing_page
   	@products = Product.limit(2)
-  	@featured_products = Product.find(1,2,5)
+  	@featured_products = Product.find(4,2,1)
   end
 
   def about
