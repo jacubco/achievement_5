@@ -2,11 +2,21 @@ class SimplePagesController < ApplicationController
   def index
   end
   def landing_page
-  	@products = Product.limit(2)
-  	@featured_products = Product.limit(3)
+    @products = Product.limit(2)
+    @featured_products = Product.limit(3)
   end
 
   def about
-  	# redirect_to '/simple_pages/contact'
+    # redirect_to '/simple_pages/contact'
+  end
+
+  def thank_you
+    @name = params[:name]
+    @email = params[:email]
+    @message = params[:message]
+    ActionMailer::Base.mail(from: @email,
+      to: 'your-email@example.com',
+      subject: "A new contact form message from #{@name}",
+      body: @message).deliver_now
   end
 end
