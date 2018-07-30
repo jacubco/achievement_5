@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :products, as: 'products'
   get 'simple_pages/contact'
   get 'simple_pages/about', as: 'about'
