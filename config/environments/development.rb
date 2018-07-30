@@ -61,7 +61,5 @@ Rails.application.configure do
 
   # Generate the right URLs for dynamic links that show up inside emails from development environment
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-
-  # The same for production
-  config.action_mailer.default_url_options = { host: 'ac5.herokuapp.com' }
+  
 end
