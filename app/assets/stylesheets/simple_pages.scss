@@ -50,6 +50,16 @@ h1 {
   }
 }
 
+.custom-link {
+    a {
+      color: $red !important;
+    }
+
+  a:hover {
+    color: $aquamarine !important;
+  }
+
+}
 // Footer
 footer {
   color: $white;
