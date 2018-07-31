@@ -13,9 +13,14 @@ class Product < ApplicationRecord
     end
   end
 
+    # finds best rating in comments
     def highest_rating_comment
       comments.rating_desc.first
     end
 
+    # finds worst rating in comments
+    def lowest_rating_comment
+      comments.rating_asc.first
+    end
  
 end
