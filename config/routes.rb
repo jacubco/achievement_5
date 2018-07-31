@@ -9,8 +9,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :create, :destroy]
 
-  root 'simple_pages#landing_page', as: 'home'
-
+  root 'simple_pages#landing_page'
   # Route for contact form on contact page
   post 'simple_pages/thank_you'
 

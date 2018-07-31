@@ -3,58 +3,58 @@
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
-      <!-- Carousel indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <% n = 1 %>
-        <% @products.each do |product| %>
-        <li data-target="#carouselExampleIndicators" data-slide-to="<%= n %>"></li>
-        <% n += 1 %>
-        <% end %>
-      </ol>
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <% n = 1 %>
+      <% @products.each do |product| %>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<%= n %>"></li>
+      <% n += 1 %>
+      <% end %>
+    </ol>
 
-      <!-- Carousel items -->
-      <div class="carousel-inner">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      
+      <!-- Static item -->
+      <div class="carousel-item active">
+        <div class="overlay"></div>
+        <img class="d-block w-100" src="/assets/blue_bike_cropped.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Welcome to Bike Berlin</h1>
+          <p>Your source for used bikes in Berlin</p>
+        </div>
+      </div>
+      
+      <!-- Dynamic items -->
+      <!-- @products is limited to the first two items in the database (done in simple_pages_controller) -->
+      <% @products.each do |product| %>
         
-        <!-- Static item -->
-        <div class="carousel-item active">
+        <div class="carousel-item">   
           <div class="overlay"></div>
-          <img class="d-block w-100" src="/assets/blue_bike_cropped.jpg" alt="First slide">
+          <%= image_tag(product.image_url, class: "d-block w-100") %>
+
+          <!-- Carousel captions -->
           <div class="carousel-caption d-none d-md-block">
-            <h1>Welcome to Bike Berlin</h1>
-            <p>Your source for used bikes in Berlin</p>
+            <h1><%= product.name %></h1>
+            <p>$<%= product.price %></p>
           </div>
         </div>
         
-        <!-- Dynamic items -->
-        <!-- @products is limited to the first two items in the database (done in simple_pages_controller) -->
-        <% @products.each do |product| %>
-          
-          <div class="carousel-item">   
-            <div class="overlay"></div>
-            <%= image_tag(product.image_url, class: "d-block w-100") %>
+      <% end %> 
 
-            <!-- Carousel captions -->
-            <div class="carousel-caption d-none d-md-block">
-              <h1><%= product.name %></h1>
-              <p>$<%= product.price %></p>
-            </div>
-          </div>
-          
-        <% end %> 
+    </div>
 
-        </div>
-
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div><!-- end carousel -->
-
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div><!-- end carousel -->
+</section>
 
 <!-- Three column grid -->
 <section id="three-column-grid" class="content">
