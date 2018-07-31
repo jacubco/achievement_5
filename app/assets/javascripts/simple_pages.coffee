@@ -4,4 +4,4 @@
 
 $(document).on "turbolinks:load", ->
   # Fadeout error message
-  $(".alert").delay( 800 ).fadeOut( 400 );
+  $(".alert").delay( 1200 ).fadeOut( 400 );
