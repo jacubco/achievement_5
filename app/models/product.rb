@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :orders
+  has_many :comments
 
   # Method for search form
   # SQL LIKE operator used to find product if name does not completly match search term
@@ -11,4 +12,10 @@ class Product < ApplicationRecord
       Product.where("name ilike ?", "%#{search_term}%")
     end
   end
+
+    def highest_rating_comment
+      comments.rating_desc.first
+    end
+
+ 
 end
