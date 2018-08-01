@@ -18,9 +18,9 @@
         </p>
         
         <h4>Worst review</h4>
-        <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>
+        <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
         <p> 
-          <b><%= @product.highest_rating_comment.user.first_name %> says:</b>
+          <b><%= @product.lowest_rating_comment.user.first_name %> says:</b>
           <%= @product.lowest_rating_comment.body %>
         </p>
 
