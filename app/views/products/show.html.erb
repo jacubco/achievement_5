@@ -42,7 +42,9 @@
       <div class="product-col col-sm-12 col-md-4 col-lg-4">
         <% if @comments.exists? %>
           <%= render 'comments' %>
-          <%= will_paginate @comments %>
+          <div class="flickr_pagination">
+            <%= will_paginate @comments %>
+          </div>
         <% end %>
           <%= render 'new_comment' %>
       </div>
