@@ -1,6 +1,5 @@
-class ProductsController < ApplicationController
+class ProductsController < ApplicationController  
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
 
   # GET /products
   # GET /products.json
@@ -24,12 +23,15 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/new
+
   def new
     @product = Product.new
   end
 
   # GET /products/1/edit
   def edit
+      authorize! :edit, @products
+
   end
 
   # POST /products
