@@ -1,5 +1,3 @@
-<section id="slides">
-    
   <!-- Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
@@ -17,8 +15,9 @@
       <!-- Static item -->
       <div class="carousel-item active">
         <div class="overlay"></div>
-        <img class="d-block w-100" src="/assets/blue_bike_cropped.jpg" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="image" style="background-image: url('/assets/blue_bike_cropped.jpg'); height: 100vh; background-size: cover; background-repeat: no-repeat;     background-position: center;">
+        </div>
+        <div class="carousel-caption d-md-block">
           <h1>Welcome to Bike Berlin</h1>
           <p>Your source for used bikes in Berlin</p>
         </div>
@@ -30,10 +29,11 @@
         
         <div class="carousel-item">   
           <div class="overlay"></div>
-          <%= image_tag(product.image_url, class: "d-block w-100") %>
+          <div class="image" style="background-image: url('<%= product.image_url %>'); height: 100vh; background-size: cover; background-repeat: no-repeat;background-position: center;">
+          </div>
 
           <!-- Carousel captions -->
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-md-block">
             <h1><%= product.name %></h1>
             <p>$<%= product.price %></p>
           </div>
