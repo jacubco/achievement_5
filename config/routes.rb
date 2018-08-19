@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'simple_pages/about', as: 'about'
   get 'simple_pages/index', as: 'oldHome'
   get 'welcome/index'
+  get 'simple_pages/test_slider'
 
   resources :orders, only: [:index, :show, :create, :destroy]
 
