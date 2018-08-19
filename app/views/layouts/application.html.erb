@@ -52,11 +52,11 @@
         <ul class="navbar-nav ml-auto text-uppercase">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "<i class='fas fa-sign-out-alt' style='text-decoration: none'></i>".html_safe, destroy_user_session_path, method: :delete, class: "nav-link" %>
+              <%= link_to "<i class='fas fa-sign-out-alt' style='text-decoration: none'></i>".html_safe, destroy_user_session_path, method: :delete, id: "item1", title: "Log out", 'data-placement': "left", class: "nav-link" %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "<i class='fas fa-sign-in-alt' style='text-decoration: none'></i>".html_safe, new_user_session_path, class: "nav-link" %>
+              <%= link_to "<i class='fas fa-sign-in-alt' style='text-decoration: none'></i>".html_safe, new_user_session_path, id: "item1", title: "Log in", 'data-placement': "left", class: "nav-link" %>
             </li>
           <% end %>
           <li class="nav-item"> <%= link_to "Home", root_path, :class => "nav-link" %> </li>
@@ -78,5 +78,6 @@
     <footer class="site-footer text-right">
       <p>&copy; 2018 Bike Berlin</p>
     </footer>
+    
   </body>
 </html>
