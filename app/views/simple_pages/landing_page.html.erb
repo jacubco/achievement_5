@@ -6,10 +6,8 @@
     <!-- Carousel indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <% n = 1 %>
-      <% @products.each do |product| %>
-      <li data-target="#carouselExampleIndicators" data-slide-to="<%= n %>"></li>
-      <% n += 1 %>
+      <% @products.each_with_index do |product, n| %>
+        <li data-target="#carouselExampleIndicators" data-slide-to="<%= n + 1 %>"></li>
       <% end %>
     </ol>
 
