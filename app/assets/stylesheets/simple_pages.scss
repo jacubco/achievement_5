@@ -57,6 +57,14 @@ h1 {
   margin-bottom: 0px;
 }
 
+// Carousel
+.custom-carousel-image {
+  height: 100vh; 
+  background-size: cover; 
+  background-repeat: no-repeat;     
+  background-position: center;
+}
+
 // Footer
 footer {
   color: $white;
