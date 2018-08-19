@@ -1,11 +1,23 @@
 <!-- display products -->
 
   <div class="product-col col-sm-12 col-md-4 col-lg-4">
-    <div class="product element-shadow">
-     <h3><%= link_to product.name, product_path(product.id)%></h3>
+    <%= link_to product_path(product.id) do %>
+    <div id="<%=product.id.to_s%>" class="product element-shadow" onmouseover='<%="mouseOver" + product.id.to_s + "()" %>' onmouseout='<%="mouseOut" + product.id.to_s + "()" %>'>
+     <h3><%= product.name %></h3>
       <%= image_tag(product.image_url, class: "img-fluid") %>
       <p><%= product.description %></p>
       <p><strong>Colour: </strong><%= product.colour %></p>
-      <strong>$<%= product.price %></strong>
+      <strong class="custom-text-color">$<%= product.price %></strong>
     </div>
+    <% end %>
   </div><!-- /col -->
+
+  <script>
+    function <%="mouseOver" + product.id.to_s + "()" %> {
+      document.getElementById("<%=product.id.to_s%>").classList.add("productHover");
+    }
+
+    function <%="mouseOut" + product.id.to_s + "()" %> {
+      document.getElementById("<%=product.id.to_s%>").classList.remove("productHover");
+    }
+  </script>

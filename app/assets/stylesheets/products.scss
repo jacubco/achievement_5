@@ -5,10 +5,25 @@
 
 @import 'variables';
 
+a { 
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    
+    h3 {
+      color: $aquamarine;
+    }
+  }
+
+.product-col {
+  margin-top: 20px;
+}
+
 .product {
   border: 1px solid $iron;
   border-radius: 5px;
-  margin-bottom: 20px;
 
   h1, h4 {
     margin-top: 10px;
@@ -16,28 +31,32 @@
   }
 
   h3, p {
+    color: $black;
     text-align: center;
     margin-top: 10px;
   }
   h3 {
-        text-transform: capitalize;
-  }
-
-  a {
+    text-transform: capitalize;
+    text-transform: uppercase;
     color: $red;
-  }
-  a:hover {
-    color: $aquamarine;
-    text-decoration: none;
   }
 
   img {
-    width: 90%;
+    max-width: 90%;
     border: 1px solid $firefly;
     border-radius: 5px;
     margin:auto;
     display: flex; 
   }
+}
+
+.custom-text-color {
+  color: $firefly;
+}
+
+.productHover {
+  opacity: 0.8;
+
 }
 
 // Form

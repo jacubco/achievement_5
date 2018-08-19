@@ -22,6 +22,11 @@ h1 {
   padding-bottom: 40px;
 }
 
+.content-home {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .element-shadow { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); }
 
 // Navbar
@@ -44,8 +49,15 @@ h1 {
 }
 
 .btn-outline-success {
-  color:$red;
-  border-color: $red;
+  color:$black;
+  border-color: $black;
+}
+
+.btn-outline-success:hover {
+  color: $iron;
+  background-color: $black;
+  border-color: $iron;
+
 }
 
 .custom-link {
@@ -152,18 +164,6 @@ footer {
   h3 {
     text-transform: uppercase;
     padding-bottom: 10px;
-  }
-
-  a {
-    color: $red;
-  }
-  a:hover {
-    color: $aquamarine;
-    text-decoration: none;
-  }
-
-  img {
-    max-width: 90%;
   }
 
 }
