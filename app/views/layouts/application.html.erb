@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
-      <!-- Font Awesome CDN-->
+    <!-- Font Awesome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -15,7 +15,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-</head>
   </head>
 
   <body>
@@ -51,15 +50,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto text-uppercase">
-
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "<i class='fas fa-sign-out-alt' style='text-decoration: none'></i>".html_safe, destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
           <% else %>
-          <li class="nav-item">
-            <%= link_to('Login', new_user_session_path, class: "nav-link") %>
-          </li>
+            <li class="nav-item">
+              <%= link_to "<i class='fas fa-sign-in-alt' style='text-decoration: none'></i>".html_safe, new_user_session_path, class: "nav-link" %>
+            </li>
           <% end %>
           <li class="nav-item"> <%= link_to "Home", root_path, :class => "nav-link" %> </li>
           <li class="nav-item"> <%= link_to "About", about_path, :class => "nav-link" %> </li>
