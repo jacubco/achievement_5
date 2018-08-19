@@ -6,11 +6,6 @@ class SimplePagesController < ApplicationController
     @featured_products = Product.limit(3)
   end
 
-  def test_slider
-    @products = Product.limit(2)
-  end
-
-
   def about
     # redirect_to '/simple_pages/contact'
   end
