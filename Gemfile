@@ -48,6 +48,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Dev database
   gem 'sqlite3'
+  # Add RSpec for testing
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :development do
