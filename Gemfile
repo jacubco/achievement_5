@@ -50,6 +50,8 @@ group :development, :test do
   gem 'sqlite3'
   # Add RSpec for testing
   gem 'rspec-rails', '~> 3.7'
+  # Functional tests
+  gem 'rails-controller-testing'
 end
 
 group :development do
