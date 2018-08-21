@@ -10,6 +10,7 @@ class Ability
       can :manage, User, id: user.id
       can :create, Comment
       cannot :destroy, Comment
+      cannot :create, Product
       cannot :edit, Product
       cannot :update, Product
       cannot :destroy, Product

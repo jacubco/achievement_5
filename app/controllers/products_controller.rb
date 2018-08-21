@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   # GET /products/new
 
   def new
+    authorize! :new, @products
     @product = Product.new
   end
 
@@ -37,6 +38,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    authorize! :create, @products
+
     @product = Product.new(product_params)
 
     respond_to do |format|

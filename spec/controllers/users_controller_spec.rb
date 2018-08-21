@@ -36,7 +36,7 @@ describe UsersController, type: :controller do
     end
 
     context 'when a user is not logged in' do
-      it 'redirects to login' do
+      it 'redirects to root' do
         get :show, params: {id: john.id }
         expect(response).to redirect_to(root_path)
       end
