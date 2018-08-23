@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'simple_pages/about', as: 'about'
   get 'simple_pages/index', as: 'oldHome'
   get 'welcome/index'
+  get 'simple_pages/looping'
 
   resources :orders, only: [:index, :show, :create, :destroy]
 
