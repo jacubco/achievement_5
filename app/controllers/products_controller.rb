@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
       @products = Product.search(search_term)
     else
       @products = Product.all
+      logger.debug @products
+
     end
 
     # render a layout different from application.html.erb
