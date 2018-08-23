@@ -3,10 +3,15 @@ require 'rails_helper'
 describe Comment do 
 
   context "when product and user exist" do
-    let(:product) { Product.create!(name: "race bike") }
+    # let(:product) { Product.create!(name: "race bike") }
+    product = FactoryBot.build(:product)
 
     before do
-      User.create!(email: "john@doe.com", password: "123456")
+      # User.create!(email: "john@doe.com", password: "123456")
+
+      # Have to use create method
+      # Otherwise user won't be stored and thus blank
+      FactoryBot.create(:user)
     end
 
     it "is not valid without a rating" do
