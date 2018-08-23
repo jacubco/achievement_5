@@ -4,7 +4,7 @@ describe User do
 
   context "email and password present" do
     # let(:user) { User.new(email: "john@smith.com", password: "123456")}
-    user = FactoryBot.create(:user, email: "john@doe2.com")
+    user = FactoryBot.build(:user, email: "john@doe2.com")
 
     # @user = User.create!(email: "john@smith.com", password: "123456")
 
