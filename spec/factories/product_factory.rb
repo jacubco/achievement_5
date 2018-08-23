@@ -2,7 +2,7 @@ FactoryBot.define do
 # Inside the block we define all factories for this file
 
   factory :product, class: Product do
-    name "nice bike"
+    name {"nice bike"}
   end
 
 
