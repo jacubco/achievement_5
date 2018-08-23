@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    byebug
     authorize! :create, @products
 
     @product = Product.new(product_params)
