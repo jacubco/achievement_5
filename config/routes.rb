@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   # Route for contact form on contact page
   post 'simple_pages/thank_you'
 
+  post "/payments/create"
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
