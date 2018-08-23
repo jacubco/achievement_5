@@ -7,8 +7,8 @@ FactoryBot.define do
 
 
   factory :comment do
-  rating 5
-  body "Great bike!"
-  user
-end
+    rating {5}
+    body {"Great bike!"}
+    user
+  end
 end
