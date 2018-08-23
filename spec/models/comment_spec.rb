@@ -4,10 +4,9 @@ describe Comment do
 
   context "when product and user exist" do
     let(:product) { Product.create!(name: "race bike") }
-    let(:user) { User.create!(email: "john@smith.com", password: "123456")}
 
     before do
-      User.create!(email: "john@smith.com", password: "123456")
+      User.create!(email: "john@doe.com", password: "123456")
     end
 
     it "is not valid without a rating" do
