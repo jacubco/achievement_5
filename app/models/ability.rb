@@ -14,8 +14,7 @@ class Ability
       cannot :edit, Product
       cannot :update, Product
       cannot :destroy, Product
-      can :create, Payments
-      can :create, Orders
+      can :create, Order
     end
 
 
