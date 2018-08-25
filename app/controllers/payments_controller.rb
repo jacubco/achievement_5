@@ -27,7 +27,8 @@ class PaymentsController < ApplicationController
     flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
   end
 
-  redirect_to @product
+  redirect_to @product, notice: 'Success. Thank you very much for your purchase!'
+
 end
 
 end
