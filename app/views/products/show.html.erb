@@ -12,21 +12,21 @@
       <div class="product-col col-sm-12 col-md-4 col-lg-4">
         <% if @comments.exists? %>
           <h4>Average Rating:</h4>
-          <div class="rated" data-score="<%= @product.average_rating %>"></div>
+          <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>
           <p></p>
           
           <h4>Best review</h4>
-          <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>        
+          <div id="highest-rating" class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div>        
           <p>
-            <b><%= @product.highest_rating_comment.user.first_name %> says:</b>
-            <%= @product.highest_rating_comment.body %>
+            <b id="highest-rating-user"><%= @product.highest_rating_comment.user.first_name %> says:</b>
+            <span id="highest-rating-comment"><%= @product.highest_rating_comment.body %></span>
           </p>
           
           <h4>Worst review</h4>
-          <div class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+          <div id="lowest-rating" class="rated" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
           <p> 
-            <b><%= @product.lowest_rating_comment.user.first_name %> says:</b>
-            <%= @product.lowest_rating_comment.body %>
+            <b id="lowest-rating-user"><%= @product.lowest_rating_comment.user.first_name %> says:</b>
+            <span id="lowest-rating-comment"><%= @product.lowest_rating_comment.body %></span>
           </p>
         <%end%>
       </div>
