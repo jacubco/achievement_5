@@ -2,13 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <h1>Contact Us</h1>
-        <h4>Where to find us:</h4>
-        <p>
-          Köpenicker Straße 126<br>
-          10179 Berlin
-        </p>
-     
+
+        <% cache do %>
+          <% sleep 2 %>
+
+          <h1>Contact Us</h1>
+          <h4>Where to find us:</h4>
+          <p>
+            Köpenicker Straße 126<br>
+            10179 Berlin
+          </p>
+        <% end %>
+       
         <h4>Send us a message:</h4>
         <%= flash[:notice] %>
 
@@ -33,7 +38,7 @@
           <%= form.submit "Send", class: "form_label btn btn-outline-success my-2 my-sm-0" %>
         </div>
         <% end %>
-      </div>
+      </div> <!-- end col -->
     </div>
   </div>
 </section>
