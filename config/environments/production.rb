@@ -103,4 +103,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: "ridewithstyle.herokuapp.com" }
+
+  # Configure heroku for using actionCalbe
+  config.web_socket_server_url = "wss://ac5.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://ac5.herokuapp.com', 'http://ac5.herokuapp.com']
 end

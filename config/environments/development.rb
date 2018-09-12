@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+  # Tell rails generator to generate javascript files instead of coffee script files
+  config.app_generators.javascript_engine = :javascript
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
