@@ -3,7 +3,7 @@ $("#new_comment").hide();
 $("#sw").html("Thank you for your review!");
 
 // Add new comment to comments
-$('.product-reviews').prepend("<%= j render @comment %>");
+// $('.product-reviews').prepend("<%= j render @comment %>");
 
 // Refresh average, highest and lowest rating
 $("#average-rating").attr('data-score', "<%= @product.average_rating %>");
