@@ -92,7 +92,25 @@
       <div class="col-md-12">
         <h3>Featured Products</h3>
       </div>
-        <%= render @featured_products%>
+        <% cache 'featured-bikes', expires_in: Time.now.beginning_of_hour + 1.hour do %>
+          <%= render @featured_products%>        
+        <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- Latest arrivals / changed to featured product -->
+<section id="words" class="content-home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Word of the hour</h3>
+      </div>
+      <div class="col-md-12">
+        <% cache 'word-of-the-hour', expires_in: Time.now.beginning_of_hour + 1.hour do %>
+          <%= %w(happy developer watch drifting ruby screencasts about rails).sample %>
+        <% end %>
+      </div>
     </div>
   </div>
 </section>
