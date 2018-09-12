@@ -19,7 +19,7 @@ $(".alert.alert-info").show();
   $("#average-rating").attr('data-score', data.average_rating);
   refreshRating();
 
-console.log(data);
+  console.log(data);
 },
 
 listenToComments: function() {
