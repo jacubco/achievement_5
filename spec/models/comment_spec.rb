@@ -15,7 +15,22 @@ describe Comment do
     end
 
     it "is not valid without a rating" do
+      expect(product.comments.new(product_id: 1, user_id: 1, body: "Nice bike!")).not_to be_valid
+    end
+
+    it "is not valid without a body" do
+      expect(product.comments.new(product_id: 1, user_id: 1, rating: 3)).not_to be_valid
+    end
+
+    it "is not valid without a user" do
+      expect(product.comments.new(product_id: 1, rating: 3, body: "Nice bike!")).not_to be_valid
+    end
+
+
+    it "to be valid when all info is given" do
       expect(product.comments.new(product_id: 1, user_id: 1, rating: 3, body: "Nice bike!")).to be_valid
     end
+
+
   end
 end
