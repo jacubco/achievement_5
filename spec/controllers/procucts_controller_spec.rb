@@ -4,8 +4,8 @@ describe ProductsController, type: :controller do
   # let(:pina) { User.create!(email: "pina@colada.com", password: "123456", admin: true) }
   # let(:john) { User.create!(email: "john@doe.com", password: "123456", admin: false)}
 
-
   describe 'Product' do
+    
     context 'when admin is logged in' do
       before do
         @pina = FactoryBot.build(:user)
@@ -15,7 +15,8 @@ describe ProductsController, type: :controller do
       it 'creates a product' do
         expect(FactoryBot.create(:product)).to be_valid
       end
-    end
+  
+  
 
     # context 'when regular user is logged in' do
     #   before do
@@ -27,6 +28,20 @@ describe ProductsController, type: :controller do
     #     expect(Product.create(name: "flying bike")).not_to be_valid
     #   end
     # end
-  end
+
+
+    context 'when params come with a search'
+      it "only shows the race bike" do
+        get :index, params: {q: "race bike"}
+        expect(response).to be_ok
+      end
+    end
+
+    context 'when no params come with a search'
+      it "only shows the race bike" do
+        get :index
+        expect(response).to be_ok
+      end
+    end
 
 end
