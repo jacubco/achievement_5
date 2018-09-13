@@ -14,14 +14,24 @@ describe Product do
       # product.comments.create!(rating: 1, user: user, body: "Awful bike!")
       # product.comments.create!(rating: 3, user: user, body: "Ok bike!")
       # product.comments.create!(rating: 5, user: user, body: "Great bike!")
-      FactoryBot.create(:comment, product: product)
-      FactoryBot.create(:comment, product: product)
-      FactoryBot.create(:comment, product: product)
+      FactoryBot.create(:comment, rating: 1, body: "bad bike", product: product)
+      FactoryBot.create(:comment, rating: 3, product: product)
+      FactoryBot.create(:comment, rating: 5, body: "awesome it is", product: product)
     end
     
+    it "returns the highest rating of all comments" do
+      expect(product.highest_rating_comment.rating).to eq 5
+      expect(product.highest_rating_comment.body).to eq "awesome it is"
+
+    end
+
+    it "returns the lowest rating of all comments" do
+      expect(product.lowest_rating_comment.rating).to eq 1
+      expect(product.lowest_rating_comment.body).to eq "bad bike"
+    end
 
     it "returns the average rating of all comments" do
-      expect(product.average_rating).to eq 5
+      expect(product.average_rating).to eq 3
     end
 
     it "is not valid without a name" do
