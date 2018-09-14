@@ -1,0 +1,29 @@
+<!-- display products -->
+
+<div class="product-col col-sm-12 col-md-4 col-lg-4">
+
+  <% cache product do %>
+    <%= link_to product_path(product.id) do %>
+      <div id="<%=product.id.to_s%>" class="product element-shadow" onmouseover='<%="mouseOver" + product.id.to_s + "()" %>' onmouseout='<%="mouseOut" + product.id.to_s + "()" %>'>
+       <h3><%= product.name %></h3>
+        <%= image_tag(product.image_url, data_zoom_image: "product.image_url", class: "img-fluid img-zoom") %>
+        <p><%= product.description %></p>
+        <p><strong>Colour: </strong><%= product.colour %></p>
+        <strong class="custom-text-color">$<%= product.price %></strong>
+      </div>
+    <% end %>
+  <% end %> <!-- end cache -->
+</div><!-- /col -->
+
+<script>
+  function <%="mouseOver" + product.id.to_s + "()" %> {
+    document.getElementById("<%=product.id.to_s%>").classList.add("productHover");
+  }
+
+  function <%="mouseOut" + product.id.to_s + "()" %> {
+    document.getElementById("<%=product.id.to_s%>").classList.remove("productHover");
+  }
+</script>
+
+
+<% logger.debug "Product: #{product.name}"%>

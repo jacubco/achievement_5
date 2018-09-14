@@ -30,10 +30,15 @@ describe ProductsController, type: :controller do
     # end
 
 
-    context 'when params come with a search'
+    context 'when a search is performed'
+      before do
+        Product.create(name: "flying bike")
+      end
+
       it "only shows the race bike" do
         get :index, params: {q: "race bike"}
         expect(response).to be_ok
+        expect(Product.index).to eq @product
       end
     end
 
