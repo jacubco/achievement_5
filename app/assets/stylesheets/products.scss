@@ -25,6 +25,10 @@ a {
   border: 1px solid $iron;
   border-radius: 5px;
 
+  &:hover {
+    opacity: 0.6;
+  }
+
   h1, h4 {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -52,14 +56,6 @@ a {
 
 .custom-text-color {
   color: $firefly;
-}
-
-.productHover {
-  opacity: 0.1;
-}
-
-.product-col:hover {
-  opacity: 0.6;
 }
 
 // Form

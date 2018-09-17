@@ -1,0 +1,13 @@
+koala -> Facebook API
+
+need a job that will run every hour / day etc. 
+-> Heroku -> scheduler
+-> in the app -> rake task
+
+-> nokogiri -> parses html files etc.
+
+-> add service that notifaications 
+
+rollbar, bugsnap, airbrake
+
+

@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     # Querys order table, and then retrieves each product from product table
     # @orders = Order.all
@@ -19,7 +22,5 @@ class OrdersController < ApplicationController
 
   def destroy
   end
-
-  before_action :authenticate_user!
 
 end
