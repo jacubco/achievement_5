@@ -6,15 +6,42 @@ describe ProductsController, type: :controller do
 
   describe 'Product' do
     
+    # Create action
     context 'when admin is logged in' do
       before do
-        @pina = FactoryBot.build(:user)
-        sign_in @pina
+        @user = FactoryBot.create(:admin)
+        sign_in @user
       end
 
-      it 'creates a product' do
-        expect(FactoryBot.create(:product)).to be_valid
+      # both 'creates article' tests do the same
+      # leaving them for personal reference
+      it "creates article" do 
+        article_params = FactoryBot.attributes_for(:product)
+        expect { post :create, params: {product: article_params} }.to change(Product, :count).by(1) 
       end
+
+      it "creates article" do 
+        expect{ post :create, params: {product: FactoryBot.attributes_for(:product)} 
+        }.to change(Product,:count).by(1)
+      end
+    end
+
+    context 'when regular user is logged in' do
+      before do
+        @user = FactoryBot.create(:user)
+        sign_in @user
+      end
+
+      # both tests do the same
+      # leaving them for personal reference
+      it "does not create an article" do 
+        article_params = FactoryBot.attributes_for(:product)
+        expect { post :create, params: {product: article_params} }.to change(Product, :count).by(0) 
+      end
+    end
+  end
+
+
   
   
 
@@ -30,23 +57,23 @@ describe ProductsController, type: :controller do
     # end
 
 
-    context 'when a search is performed'
-      before do
-        Product.create(name: "flying bike")
-      end
+    # context 'when a search is performed'
+    #   before do
+    #     Product.create(name: "flying bike")
+    #   end
 
-      it "only shows the race bike" do
-        get :index, params: {q: "race bike"}
-        expect(response).to be_ok
-        expect(Product.index).to eq @product
-      end
-    end
+    #   it "only shows the race bike" do
+    #     get :index, params: {q: "race bike"}
+    #     expect(response).to be_ok
+    #     expect(Product.index).to eq @product
+    #   end
+    # end
 
-    context 'when no params come with a search'
-      it "only shows the race bike" do
-        get :index
-        expect(response).to be_ok
-      end
-    end
+    # context 'when no params come with a search'
+    #   it "only shows the race bike" do
+    #     get :index
+    #     expect(response).to be_ok
+    #   end
+    # end
 
 end
