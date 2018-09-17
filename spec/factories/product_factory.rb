@@ -2,7 +2,11 @@ FactoryBot.define do
 # Inside the block we define all factories for this file
 
   factory :product, class: Product do
-    name {"nice bike"}
+    name {"bike"}
+    description {"nice bike"}
+    image_url {"https://placekitten.com/300/200"}
+    colour {"blue"}
+    price {42}
   end
 
 
